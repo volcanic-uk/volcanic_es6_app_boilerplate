@@ -2,6 +2,8 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 console.log('%c DEV CONFIGS ******************************************************');
+
+
 module.exports = merge(common, {
 	devtool: 'inline-source-map',
 	module: {
@@ -9,7 +11,12 @@ module.exports = merge(common, {
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: ['babel-loader','eslint-loader']
+				use: ['babel-loader', {
+					loader: 'eslint-loader',
+					options: {
+						emitWarning: true
+					}
+				}]
 			},
 			{
 				test: /\.scss$/,
@@ -23,10 +30,10 @@ module.exports = merge(common, {
 			},
 			{
 				test: /\.css$/,
-				use: ['style-loader','css-loader']
+				use: ['style-loader', 'css-loader']
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
+				test: /\.(png|jpg|gif|svg)$/,
 				use: [
 					{
 						loader: 'file-loader?name=images/[hash].[ext]',
@@ -43,8 +50,5 @@ module.exports = merge(common, {
 	plugins: [
 		new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		// new webpack.SourceMapDevToolPlugin({
-		//     filename: '[name].js.map',
-		// })
 	]
 });

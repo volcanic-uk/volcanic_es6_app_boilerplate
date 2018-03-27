@@ -19,7 +19,7 @@ module.exports = {
     ],
     "rules": {
         "indent": [
-            "warn",
+            "off",
             "tab"
         ],
         "linebreak-style": [
@@ -31,7 +31,7 @@ module.exports = {
             "single"
         ],
         "semi": [
-            "error",
+            "warn",
             "always"
         ],
         "no-console": ["off"]
