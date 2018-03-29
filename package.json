@@ -68,7 +68,7 @@
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "url-loader": "^1.0.1",
-    "webpack": "^4.1.1",
+    "webpack": "4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-dev-server": "^3.1.1",
@@ -82,5 +82,8 @@
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
   },
-  "homepage": "https://github.com/volcanic-uk/volcanic_es6_app_boilerplate#readme"
+  "homepage": "https://github.com/volcanic-uk/volcanic_es6_app_boilerplate#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
 }

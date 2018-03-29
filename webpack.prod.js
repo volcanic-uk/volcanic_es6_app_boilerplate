@@ -6,6 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSASS = new ExtractTextPlugin('stylesheets/[name].min.css');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 console.log('%c PROD CONFIGS ******************************************************');
 module.exports = merge(common, {
 	devtool: 'source-map',
@@ -42,6 +43,7 @@ module.exports = merge(common, {
 
 	plugins: [
 		extractSASS,
+		new CleanWebpackPlugin(['dist', 'build', 'lib']),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production')
 		}),

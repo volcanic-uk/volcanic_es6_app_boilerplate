@@ -13,7 +13,7 @@ module.exports = {
 		publicPath: '/'
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist','build','lib']),
+		new CleanWebpackPlugin(['dist','lib']),
 		new HtmlWebpackPlugin({
 			title: 'Production',
 			template: './index.html',
